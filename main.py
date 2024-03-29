@@ -92,12 +92,7 @@ with open('input.csv', 'r', encoding='UTF-8') as f:
             else:
                 line[15] = ', '.join(fields_to_add)
 
-        if 'Против игроков (по сети)' in line[9]:
-
-            fields_to_add = []
-
-            if 'Мультиплеер' not in line[15]:
-                fields_to_add.append(i)
+        if 'Против игроков (по сети)' in line[9] and 'Мультиплеер' not in line[15]:
 
             if line[15] != '':
                 line[15] = ', '.join([*line[15].split(', '), 'Мультиплеер'])
